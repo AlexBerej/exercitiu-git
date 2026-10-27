@@ -30,7 +30,7 @@ def pe_servicii(tinte):
             continue
         grupe[serviciu] = []
         grupe[serviciu].append(port)
-
+    return grupe
 
 def peste_prag(tinte, prag):
     """Lista gazdelor cu un port mai mare decat pragul."""
@@ -49,7 +49,7 @@ def main():
     a = p.parse_args()
 
     tinte = incarca(a.fisier)
-    print(f"Tinte citite: " + len(tinte))
+    print(f"Tinte citite: {len(tinte)}")
 
     grupe = pe_servicii(tinte)
     for serviciu, porturi in grupe.items():
